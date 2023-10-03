@@ -42,10 +42,9 @@
   content: "";
   width: 100%;
   height: 3px;
-  margin-top: 50;
   border-bottom: 3px solid #fff;
   position: absolute;
-  top: 49px;
+  bottom: -14.9px;
   right: 0;
 }
 .navbar__signin-button {
