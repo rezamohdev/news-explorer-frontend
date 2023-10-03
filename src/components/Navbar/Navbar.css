@@ -2,6 +2,10 @@
   font-family: "Roboto Slab";
   src: url("../../../public/fonts/roboto-slab-700.woff");
 }
+@font-face {
+  font-family: "Roboto 500";
+  src: url("../../../public/fonts/roboto-500.woff");
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -23,6 +27,11 @@
   gap: 42px;
 }
 .navbar__button {
+  font-family: "Roboto 500";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
   background-color: transparent;
   border: none;
   color: #fff;
@@ -40,6 +49,11 @@
   right: 0;
 }
 .navbar__signin-button {
+  font-family: "Roboto 500";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
   width: 176px;
   background-color: transparent;
   color: #fff;
