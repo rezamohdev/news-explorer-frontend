@@ -1,0 +1,10 @@
+.newscardlist {
+  display: flex;
+  flex-direction: column;
+}
+.newscardlist__grid {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+}

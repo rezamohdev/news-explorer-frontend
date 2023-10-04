@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../../public/fonts/roboto-400-regular.woff);
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url(../../../public/fonts/roboto-slab-400-regular.woff);
+}
+
+.newscard {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.newscard__info {
+  background-color: #fff;
+}
+.newscard__date {
+  color: #b6bcbf;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
