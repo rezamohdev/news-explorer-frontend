@@ -1,11 +1,11 @@
 import React from "react";
 import './Header.css';
-import Navbar from "../Navbar/Navbar";
 import Searchbar from "../Searchbar/Searchbar";
+import Navigation from "../Navigation/Navigation";
 function Header() {
     return (
         <div className="header">
-            <Navbar />
+            <Navigation />
             <Searchbar />
         </div>
     )
