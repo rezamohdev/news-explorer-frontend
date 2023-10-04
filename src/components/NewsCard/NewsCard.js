@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NewsCard.css';
 const imageCard = require('../../images/image_04.png');
 export default function NewsCard() {
+    const [tooltipShow, setTooltipShow] = useState(false);
+
+
+    const handleIsMouseOver = () => {
+        setTooltipShow(true);
+    }
+    const handleOnMouseLeave = () => {
+        setTooltipShow(false);
+    }
     return (
         <div className='newscard'>
+            <div className='newscard__save-box'>
+                {tooltipShow && (<span className='newscard__save-tooltip'>Sign in to save articles</span>)}
+                <button className='newscard__save-button' onMouseOver={handleIsMouseOver} onMouseLeave={handleOnMouseLeave}></button>
+            </div>
             <img src={imageCard} className='newscard__image' />
             <div className='newscard__info'>
                 <span className='newscard__date'>November 4, 2020</span>
