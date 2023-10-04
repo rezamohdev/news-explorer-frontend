@@ -15,7 +15,12 @@
   overflow: hidden;
 }
 .newscard__info {
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
+  margin: 0;
+  padding: 24px;
+  gap: 12px;
 }
 .newscard__date {
   color: #b6bcbf;
@@ -24,4 +29,39 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+.newscard__title {
+  color: #1a1b22;
+  font-family: "Roboto Slab";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+}
+.newscard__desciprtion {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+}
+.newscard__author {
+  color: #b6bcbf;
+  font-family: Roboto Slab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  margin-top: 6px;
 }
