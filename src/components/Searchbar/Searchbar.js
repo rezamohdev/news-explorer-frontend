@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Searchbar.css';
-
+const loadingImage = require('../../images/loading.svg')
 export default function Searchbar() {
+
     return (
         <div className='searchbar'>
             <h2 className='searchbar__title'>What's going on in the world?</h2>
