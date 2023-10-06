@@ -1,9 +1,16 @@
 import React from "react";
 import './SavedNewsHeader.css';
-import React from 'react'
+import Nvaigation from '../Navigation/Navigation';
 
 export default function SavedNewsHeader() {
     return (
-        <div>SavedNewsHeader</div>
+        <div className="saved-news-header">
+            <Nvaigation />
+            <div className="saved-news-header__titlebar">
+                <span className="saved-news-header__title">Saved articles</span>
+                <h4 className="saved-news-header__news-count"></h4>
+                <span className="saved-news-header__keywords">By keywords: <b>Nature, Yellowstone, and 2 other</b></span>
+            </div>
+        </div>
     )
 }

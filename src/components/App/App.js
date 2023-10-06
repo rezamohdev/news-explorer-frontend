@@ -3,13 +3,14 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import './App.css';
+import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     return (
         <div className="App">
 
-            {!isLoggedIn ? (<Header />) : <p>Loggedin</p>}
+            {!isLoggedIn ? (<Header />) : <SavedNewsHeader />}
             <Main />
             <Footer />
         </div>

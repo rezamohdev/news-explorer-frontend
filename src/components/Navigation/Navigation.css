@@ -10,7 +10,8 @@
   display: flex;
   justify-content: space-between;
   padding: 19px 104px 13px 104px;
-  border-bottom: 2px solid #ffffff5d;
+  background: var(--main-white, #fff);
+  box-shadow: 0px -1px 0px 0px #d1d2d6 inset;
 }
 .navbar__left-side {
 }
@@ -21,6 +22,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+}
+.navbar__title_saved-news {
+  color: var(--main-primary, #1a1b22);
 }
 .navbar__right-side {
   display: flex;
@@ -37,16 +41,21 @@
   color: #fff;
   position: relative;
 }
-.navbar__button::after {
+
+.navbar__button_active::after {
   display: block;
   content: "";
   width: 100%;
   height: 3px;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid var(--main-primary, #1a1b22);
   position: absolute;
   bottom: -14.9px;
   right: 0;
 }
+.navbar__button_saved-news {
+  color: var(--main-primary, #1a1b22);
+}
+
 .navbar__signin-button {
   font-family: "Roboto 500";
   font-size: 18px;
@@ -62,7 +71,16 @@
   cursor: pointer;
   transition: 200ms all ease;
 }
+.navbar__signin-button_saved-news {
+  color: var(--main-primary, #1a1b22);
+  border-color: #000;
+  background-color: #ffff;
+}
+.navbar__signin-button_saved-news:hover {
+  color: #fff;
+  background-color: var(--main-primary, #1a1b22);
+}
 .navbar__signin-button:hover {
   background-color: #fff;
-  color: #000;
+  color: var(--main-primary, #1a1b22);
 }
