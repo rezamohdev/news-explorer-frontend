@@ -8,7 +8,7 @@ export default function SavedNewsHeader() {
             <Nvaigation />
             <div className="saved-news-header__titlebar">
                 <span className="saved-news-header__title">Saved articles</span>
-                <h4 className="saved-news-header__news-count"></h4>
+                <h2 className="saved-news-header__news-count">Elise, you have 5 saved articles</h2>
                 <span className="saved-news-header__keywords">By keywords: <b>Nature, Yellowstone, and 2 other</b></span>
             </div>
         </div>
