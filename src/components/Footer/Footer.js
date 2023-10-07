@@ -4,7 +4,7 @@ import './Footer.css';
 export default function Footer() {
     return (
         <div className='footer'>
-            <span className='footer__copyright'>© 2021 Supersite, Powered by News API</span>
+            <span className='footer__copyright'>© 2023 Supersite, Powered by News API</span>
             <div className='footer__navigation'>
                 <div className='footer__links'>
                     <button className='footer__button'>Home</button>
