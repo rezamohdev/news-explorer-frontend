@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './NewsCard.css';
 const imageCard = require('../../images/image_04.png');
-export default function NewsCard() {
+export default function NewsCard({ inSavedNews = true }) {
     const [tooltipShow, setTooltipShow] = useState(false);
 
 
@@ -14,9 +14,22 @@ export default function NewsCard() {
     return (
         <div className='newscard'>
             <div className='newscard__save-box'>
-                {tooltipShow && (<span className='newscard__save-tooltip'>Sign in to save articles</span>)}
-                <button className='newscard__save-button' onMouseOver={handleIsMouseOver} onMouseLeave={handleOnMouseLeave}></button>
+                {
+                    inSavedNews == true ? (
+                        tooltipShow && (<span className='newscard__save-tooltip'>Sign in to save articles</span>)
+
+                    ) : (
+                        tooltipShow && (<span className='newscard__save-tooltip'>Remove from saved</span>)
+
+                    )
+                }
+                {inSavedNews == true ? (<button className='newscard__save-button' onMouseOver={handleIsMouseOver} onMouseLeave={handleOnMouseLeave}></button>
+                ) : (
+                    <button className='newscard__remove-button' onMouseOver={handleIsMouseOver} onMouseLeave={handleOnMouseLeave}></button>
+
+                )}
             </div>
+            {inSavedNews && (<span className='newscard__main-title'>Nature</span>)}
             <img src={imageCard} className='newscard__image' />
             <div className='newscard__info'>
                 <span className='newscard__date'>November 4, 2020</span>

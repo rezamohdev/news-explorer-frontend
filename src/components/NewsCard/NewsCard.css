@@ -31,10 +31,26 @@
   font-weight: 500;
   line-height: normal;
   background-color: #fff;
-  width: 182px;
+  /* width: 182px; */
   text-align: center;
   padding: 11px 20px;
   border-radius: 8px;
+}
+.newscard__main-title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 8px 22px;
+  margin: 0;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
 }
 .newscard__save-button {
   background: no-repeat url(../../images/bookmark.svg) #fff;
@@ -51,6 +67,24 @@
 }
 .newscard__save-button:hover {
   background: no-repeat url(../../images/bookmark_outline_hover.svg) #fff;
+  background-size: 24px;
+  background-position: center;
+}
+.newscard__remove-button {
+  background: no-repeat url(../../images/trash_normal.svg) #fff;
+  background-size: 24px;
+  background-position: center;
+  border-radius: 8px;
+  margin: 0;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  transition: all ease 420ms;
+}
+.newscard__remove-button:hover {
+  background: no-repeat url(../../images/trash.svg) #fff;
   background-size: 24px;
   background-position: center;
 }
