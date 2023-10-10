@@ -9,11 +9,15 @@ function Navigation({ isLoggedIn }) {
             <div className="navbar__right-side">
                 <button className={`navbar__button ${isLoggedIn ? 'navbar__button_saved-news' : ''} `}>Home</button>
                 <button className={`navbar__button ${isLoggedIn ? 'navbar__button_saved-news' : ''} navbar__button_active`}>Saved Articles</button>
-                {!isLoggedIn ? (<button className={`navbar__signin-button`} >Sign in</button>) : (
-                    <button className={`navbar__logout-button  ${isLoggedIn ? 'navbar__logout-button_saved-news' : ''}`} >Reza</button>
-                )}
+                {isLoggedIn ?
+                    (
+                        <button className={`navbar__logout-button  ${isLoggedIn ? 'navbar__logout-button_saved-news' : ''}`} >Reza</button>
+                    )
+                    :
+                    (<button className={`navbar__signin-button`} >Sign in</button>)
+                }
             </div>
-        </div >
+        </div>
     )
 }
 export default Navigation;

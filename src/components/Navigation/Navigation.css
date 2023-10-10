@@ -68,6 +68,16 @@
 }
 .navbar__button_saved-news {
   color: var(--main-primary, #1a1b22);
+  font-family: "Roboto 500";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: all ease 420ms;
 }
 
 .navbar__signin-button {
