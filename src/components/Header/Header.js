@@ -4,10 +4,10 @@ import Searchbar from "../Searchbar/Searchbar";
 import Navigation from "../Navigation/Navigation";
 import Loading from "../Loading/Loading";
 import Preloader from "../Preloader/Preloader";
-function Header() {
+function Header({ isLoggedIn }) {
     return (
         <div className="header">
-            <Navigation />
+            <Navigation isLoggedIn={isLoggedIn} />
             <Searchbar />
             <Loading />
             {/* <Preloader /> */}
