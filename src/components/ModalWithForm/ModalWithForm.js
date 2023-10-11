@@ -1,5 +1,6 @@
 import React from 'react';
 import './ModalWithForm.css';
+import { useEscape } from '../../hooks/useEscape';
 
 export default function ModalWithForm({ children, buttonText, title, onClose, name, isOpen, onSubmit, }) {
     const onCloseBackgroundModal = (evt) => {
