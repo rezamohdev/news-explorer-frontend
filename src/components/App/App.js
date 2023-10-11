@@ -8,10 +8,11 @@ import './App.css';
 import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import SignupModal from '../SignupModal/SignupModal';
 import { useEscape } from '../../hooks/useEscape';
+import SigninModal from '../SigninModal/SigninModal';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [activeModal, setActiveModal] = useState("");
+    const [activeModal, setActiveModal] = useState("signin");
 
 
 
@@ -19,6 +20,10 @@ function App() {
         setActiveModal("");
     }
     const handleOpenSigninModal = () => {
+        setActiveModal("signin");
+
+    }
+    const handleOpenSignupModal = () => {
         setActiveModal("signup");
 
     }
@@ -45,7 +50,10 @@ function App() {
             <Main />
             <Footer />
             {activeModal === 'signup' && (
-                <SignupModal isOpen={activeModal === "signup"} handleCloseModal={handleCloseModal} name="signup" buttonText="Signup" />
+                <SignupModal isOpen={activeModal === "signup"} handleCloseModal={handleCloseModal} name="signup" buttonText="Signup" handleOpenSigninModal={handleOpenSigninModal} />
+            )}
+            {activeModal === 'signin' && (
+                <SigninModal isOpen={activeModal === "signin"} handleCloseModal={handleCloseModal} name="signin" buttonText="Signin" handleOpenSignupModal={handleOpenSignupModal} />
             )}
         </div>
     );

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './SignupModal.css';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { useForm } from '../../hooks/useForm';
-import { useEscape } from '../../hooks/useEscape';
 
 export default function SignupModal({ onRegisterUser, handleCloseModal, isOpen = { isOpen }, buttonText, handleOpenSigninModal }) {
     const { values, handleChange, setValues } = useForm({});
