@@ -12,18 +12,18 @@ import SigninModal from '../SigninModal/SigninModal';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [activeModal, setActiveModal] = useState("signin");
+    const [activeModal, setActiveModal] = useState("");
 
 
 
     const handleCloseModal = () => {
         setActiveModal("");
     }
-    const handleOpenSigninModal = () => {
+    const handleOpenSigninModal = () => { // handle for opening sign in modal
         setActiveModal("signin");
 
     }
-    const handleOpenSignupModal = () => {
+    const handleOpenSignupModal = () => { // handle for opening sign up modal
         setActiveModal("signup");
 
     }
