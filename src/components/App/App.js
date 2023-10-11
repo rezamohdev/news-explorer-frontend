@@ -10,20 +10,24 @@ import SignupModal from '../SignupModal/SignupModal';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [activeModal, setActiveModal] = useState("signup");
+    const [activeModal, setActiveModal] = useState("");
 
 
     const handleCloseModal = () => {
         setActiveModal("");
     }
+    const handleOpenSigninModal = () => {
+        setActiveModal("signup");
+
+    }
     return (
         <div className="App">
 
-            {!isLoggedIn ? (<Header isLoggedIn={isLoggedIn} />) : <SavedNewsHeader isLoggedIn={isLoggedIn} />}
+            {!isLoggedIn ? (<Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />) : <SavedNewsHeader isLoggedIn={isLoggedIn} />}
             <Main />
             <Footer />
             {activeModal === 'signup' && (
-                <SignupModal isOpen={activeModal === "signup"} onClose={handleCloseModal} name="signup" buttonText="Signup" />
+                <SignupModal isOpen={activeModal === "signup"} handleCloseModal={handleCloseModal} name="signup" buttonText="Signup" />
             )}
         </div>
     );

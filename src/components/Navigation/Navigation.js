@@ -2,7 +2,7 @@ import React from "react";
 import './Navigation.css';
 const logoutIcon = require('../../images/logout.svg');
 
-function Navigation({ inSavedNews = true, isLoggedIn }) {
+function Navigation({ inSavedNews = false, isLoggedIn, handleOpenSigninModal }) {
     return (
         <div className={`navbar ${inSavedNews ? 'navbar_saved-news' : ''}`}>
             <div className="navbar__left-side"><span className={`navbar__title ${inSavedNews ? 'navbar__title_saved-news' : ''}`}>NewsExplorer</span></div>
@@ -14,7 +14,7 @@ function Navigation({ inSavedNews = true, isLoggedIn }) {
                         <button className='navbar__logout-button' >Reza</button>
                     )
                     :
-                    (<button className='navbar__signin-button' >Sign in</button>)
+                    (<button className='navbar__signin-button' onClick={handleOpenSigninModal}>Sign in</button>)
                 }
             </div>
         </div>
