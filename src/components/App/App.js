@@ -9,6 +9,7 @@ import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import SignupModal from '../SignupModal/SignupModal';
 import { useEscape } from '../../hooks/useEscape';
 import SigninModal from '../SigninModal/SigninModal';
+import SuccessModal from '../SuccessModal/SuccessModal';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,6 +55,9 @@ function App() {
             )}
             {activeModal === 'signin' && (
                 <SigninModal isOpen={activeModal === "signin"} handleCloseModal={handleCloseModal} name="signin" buttonText="Signin" handleOpenSignupModal={handleOpenSignupModal} />
+            )}
+            {activeModal === 'success' && (
+                <SuccessModal isOpen={activeModal === "success"} handleCloseModal={handleCloseModal} name="success" handleOpenSigninModal={handleOpenSigninModal} title='Registration successfully completed!' />
             )}
         </div>
     );
