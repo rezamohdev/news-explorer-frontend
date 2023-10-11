@@ -66,6 +66,26 @@
   bottom: -14.9px;
   right: 0;
 }
+.navbar__button_active_saved_news::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-bottom: 3px solid var(--main-primary, #1a1b22);
+  position: absolute;
+  bottom: -14.9px;
+  right: 0;
+}
+.navbar__button_saved-news:hover.navbar__button_saved-news::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-bottom: 3px solid var(--main-primary, #1a1b22);
+  position: absolute;
+  bottom: -14.9px;
+  right: 0;
+}
 .navbar__button_saved-news {
   color: var(--main-primary, #1a1b22);
   font-family: "Roboto 500";

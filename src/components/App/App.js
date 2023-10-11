@@ -9,8 +9,8 @@ import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import SignupModal from '../SignupModal/SignupModal';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
-    const [activeModal, setActiveModal] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [activeModal, setActiveModal] = useState("signup");
 
 
     const handleCloseModal = () => {
