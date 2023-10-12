@@ -63,7 +63,7 @@
   height: 3px;
   border-bottom: 3px solid #fff;
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 .navbar__button_active_saved_news::after {
@@ -142,4 +142,9 @@
 .navbar__signin-button:hover {
   background-color: #fff;
   color: var(--main-primary, #1a1b22);
+}
+.navbar__link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import './Navigation.css';
+import { Link } from "react-router-dom";
 const logoutIcon = require('../../images/logout.svg');
 
 function Navigation({ inSavedNews = false, isLoggedIn, handleOpenSigninModal }) {
@@ -7,7 +8,8 @@ function Navigation({ inSavedNews = false, isLoggedIn, handleOpenSigninModal }) 
         <div className={`navbar ${inSavedNews ? 'navbar_saved-news' : ''}`}>
             <div className="navbar__left-side"><span className={`navbar__title ${inSavedNews ? 'navbar__title_saved-news' : ''}`}>NewsExplorer</span></div>
             <div className="navbar__right-side">
-                <button className={`navbar__button ${inSavedNews ? 'navbar__button_saved-news' : ''} ${inSavedNews ? '' : 'navbar__button_active'}`}>Home</button>
+                <Link to='/' className="navbar__link">
+                    <button className={`navbar__button ${inSavedNews ? 'navbar__button_saved-news' : ''} ${inSavedNews ? '' : 'navbar__button_active'}`}>Home</button> </Link>
                 {isLoggedIn && (<button className={`navbar__button ${inSavedNews ? 'navbar__button_saved-news' : ''} ${inSavedNews ? 'navbar__button_active_saved_news' : 'navbar__button_active'}`}>Saved Articles</button>)}
                 {isLoggedIn == true ?
                     (
