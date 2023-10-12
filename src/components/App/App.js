@@ -13,7 +13,7 @@ import SavedNews from '../SavedNews/SavedNews';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [activeModal, setActiveModal] = useState("");
 
 
