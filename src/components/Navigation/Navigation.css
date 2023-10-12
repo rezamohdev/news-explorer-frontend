@@ -52,7 +52,7 @@
   height: 3px;
   border-bottom: 3px solid #fff;
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 
@@ -73,7 +73,7 @@
   height: 3px;
   border-bottom: 3px solid var(--main-primary, #1a1b22);
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 .navbar__button_saved-news:hover.navbar__button_saved-news::after {
@@ -83,7 +83,7 @@
   height: 3px;
   border-bottom: 3px solid var(--main-primary, #1a1b22);
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 .navbar__button_saved-news {
@@ -123,26 +123,19 @@
   line-height: 24px;
   width: auto;
   background-color: transparent;
-  border: 1px solid #1a1b22;
-  color: var(--main-primary, #1a1b22);
-  background-color: #ffff;
+  border: 1px solid #fff;
+  color: var(--main-primary, #fff);
+  background-color: transparent;
   padding: 12px 54px 12px 19px;
   border-radius: 100px;
   cursor: pointer;
   transition: 200ms all ease;
-  background-image: url(../../images/logout.svg);
+  background-image: url(../../images/logout_fff.svg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center right 15px;
 }
-.navbar__logout-button:hover {
-  color: #fff;
-  background-color: var(--main-primary, #777778);
-}
-.navbar__signin-button:hover {
-  background-color: #fff;
-  color: var(--main-primary, #1a1b22);
-}
+
 .navbar__link {
   text-decoration: none;
   margin: 0;
