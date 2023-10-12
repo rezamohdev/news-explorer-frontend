@@ -8,7 +8,7 @@ export default function Main() {
     return (
         <div className='main'>
             <About />
-            {/* <NewsCardList /> */}
+            <NewsCardList />
             {/* <SavedNews /> */}
         </div>
     )
