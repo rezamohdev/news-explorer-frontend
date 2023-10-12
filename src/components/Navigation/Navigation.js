@@ -6,7 +6,9 @@ const logoutIcon = require('../../images/logout.svg');
 function Navigation({ inSavedNews, isLoggedIn, handleOpenSigninModal }) {
     return (
         <div className={`navbar ${inSavedNews && 'navbar_saved-news'}`}>
-            <div className="navbar__left-side"><span className={`navbar__title ${inSavedNews ? 'navbar__title_saved-news' : ''}`}>NewsExplorer</span></div>
+            <div className="navbar__left-side">
+                <span className={`navbar__title ${inSavedNews && 'navbar__title_saved-news'}`}>NewsExplorer</span>
+            </div>
             <div className="navbar__right-side">
                 <Link to='/' className="navbar__link">
                     <button className={`navbar__button ${inSavedNews ? 'navbar__button_saved-news' : 'navbar__button_active'}`}>Home</button> </Link>
