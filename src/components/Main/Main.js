@@ -8,8 +8,8 @@ export default function Main() {
     return (
         <div className='main'>
             <About />
-            <NewsCardList />
-            <SavedNews />
+            {/* <NewsCardList /> */}
+            {/* <SavedNews /> */}
         </div>
     )
 }

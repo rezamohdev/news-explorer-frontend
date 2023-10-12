@@ -9,6 +9,7 @@ import SignupModal from '../SignupModal/SignupModal';
 import { useEscape } from '../../hooks/useEscape';
 import SigninModal from '../SigninModal/SigninModal';
 import SuccessModal from '../SuccessModal/SuccessModal';
+import SavedNews from '../SavedNews/SavedNews';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -45,10 +46,15 @@ function App() {
     }, [activeModal]);  // watch activeModal here
     return (
         <div className="App">
-            <Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
             <Switch>
                 <Route exact path='/' >
+                    <Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
                     <Main />
+                </Route>
+                <Route path='/saved-news' >
+                    <SavedNewsHeader inSavedNews={true} isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
+                    <Main />
+                    <SavedNews />
                 </Route>
 
             </Switch>
