@@ -52,7 +52,7 @@
   height: 3px;
   border-bottom: 3px solid #fff;
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 
@@ -73,7 +73,7 @@
   height: 3px;
   border-bottom: 3px solid var(--main-primary, #1a1b22);
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 .navbar__button_saved-news:hover.navbar__button_saved-news::after {
@@ -83,7 +83,7 @@
   height: 3px;
   border-bottom: 3px solid var(--main-primary, #1a1b22);
   position: absolute;
-  bottom: -14.9px;
+  top: calc(100% + 30px);
   right: 0;
 }
 .navbar__button_saved-news {
@@ -100,6 +100,16 @@
   transition: all ease 420ms;
 }
 
+.navbar__button_saved-news_active::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-bottom: 3px solid var(--main-primary, #1a1b22);
+  position: absolute;
+  top: calc(100% + 30px);
+  right: 0;
+}
 .navbar__signin-button {
   font-family: "Roboto 500";
   font-size: 18px;
@@ -123,28 +133,97 @@
   line-height: 24px;
   width: auto;
   background-color: transparent;
-  border: 1px solid #1a1b22;
-  color: var(--main-primary, #1a1b22);
-  background-color: #ffff;
+  border: 1px solid #fff;
+  color: var(--main-primary, #fff);
+  background-color: transparent;
   padding: 12px 54px 12px 19px;
   border-radius: 100px;
   cursor: pointer;
   transition: 200ms all ease;
-  background-image: url(../../images/logout.svg);
+  background-image: url(../../images/logout_fff.svg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center right 15px;
 }
-.navbar__logout-button:hover {
-  color: #fff;
-  background-color: var(--main-primary, #777778);
-}
-.navbar__signin-button:hover {
-  background-color: #fff;
+.navbar__logout-button_saved_news {
+  border: 1px solid var(--main-primary, #1a1b22);
   color: var(--main-primary, #1a1b22);
+  background-image: url(../../images/logout.svg);
 }
+
 .navbar__link {
   text-decoration: none;
   margin: 0;
   padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 18px 40px;
+    padding-bottom: 12px;
+  }
+  .navbar__title {
+    color: var(--main-white, #fff);
+    font-family: "Roboto Slab";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 120% */
+  }
+  .navbar__title_saved-news {
+    color: #1a1b22;
+  }
+  .navbar__button {
+    color: var(--main-white, #fff);
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+  }
+  .navbar__signin-button {
+    color: var(--main-white, #fff);
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    padding: 8px 12px;
+    height: 40px;
+  }
+  .navbar__button_active::after {
+    top: calc(100% + 20px);
+  }
+  .navbar__button:hover.navbar__button::after {
+    top: calc(100% + 20px);
+  }
+  .navbar__logout-button {
+    color: var(--main-white, #fff);
+    text-align: center;
+    font-family: "Roboto 500";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    padding: 5px 54px 5px 19px;
+    height: 40px;
+  }
+
+  .navbar__button_saved-news {
+    color: var(--main-primary, #1a1b22);
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+  }
+  .navbar__button_saved-news_active::after {
+    top: calc(100% + 20px);
+  }
+  .navbar__logout-button_saved_news {
+    color: var(--main-primary, #1a1b22);
+    font-size: 16px;
+  }
 }

@@ -9,7 +9,7 @@ export default function Main() {
         <div className='main'>
             <About />
             <NewsCardList />
-            <SavedNews />
+            {/* <SavedNews /> */}
         </div>
     )
 }

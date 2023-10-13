@@ -148,3 +148,8 @@
   font-weight: 400;
   line-height: normal;
 }
+@media screen and (max-width: 768px) {
+  .modal__content {
+    /* margin-top: -340px; */
+  }
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Switch } from 'react-router-dom';
-import { Route, useHistory } from 'react-router-dom';
+import { Route, useHistory, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -10,9 +9,11 @@ import SignupModal from '../SignupModal/SignupModal';
 import { useEscape } from '../../hooks/useEscape';
 import SigninModal from '../SigninModal/SigninModal';
 import SuccessModal from '../SuccessModal/SuccessModal';
+import SavedNews from '../SavedNews/SavedNews';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [activeModal, setActiveModal] = useState("");
 
 
@@ -46,9 +47,26 @@ function App() {
     }, [activeModal]);  // watch activeModal here
     return (
         <div className="App">
+            <Switch>
+                <Route exact path='/' >
+                    <Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
+                    <Main />
+                </Route>
+                <ProtectedRoute isLoggedIn={isLoggedIn} path='/saved-news' >
+                    <SavedNewsHeader inSavedNews={true} isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
+                    <Main />
+                    <SavedNews />
+                </ProtectedRoute>
+                <Route path='/signin'>
+                    <Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
+                    <Main />
+                </Route>
+                <Route path='/signup'>
+                    <Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />
+                    <Main />
+                </Route>
 
-            {!isLoggedIn ? (<Header isLoggedIn={isLoggedIn} handleOpenSigninModal={handleOpenSigninModal} />) : <SavedNewsHeader isLoggedIn={isLoggedIn} />}
-            <Main />
+            </Switch>
             <Footer />
             {activeModal === 'signup' && (
                 <SignupModal isOpen={activeModal === "signup"} handleCloseModal={handleCloseModal} name="signup" buttonText="Signup" handleOpenSigninModal={handleOpenSigninModal} />
