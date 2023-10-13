@@ -87,3 +87,11 @@
     line-height: 24px; /* 133.333% */
   }
 }
+@media screen and (max-width: 606px) {
+  .newscardlist {
+    padding: 32px 16px;
+  }
+  .newscardlist__grid {
+    flex-direction: column;
+  }
+}

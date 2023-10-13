@@ -1,9 +1,16 @@
 .header {
   max-width: 1440px;
   height: auto;
-  background-color: grey;
+  background-color: #fff;
   background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+@media screen and (max-width: 606px) {
+  .header {
+    background-image: url(../../images/mobile_bg.jpg);
+    background-size: cover;
+    background-position: inherit;
+  }
 }
