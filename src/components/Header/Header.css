@@ -7,3 +7,10 @@
   background-position: center;
   background-size: cover;
 }
+@media screen and (max-width: 606px) {
+  .header {
+    background-image: url(../../images/mobile_bg.jpg);
+    background-size: cover;
+    background-position: inherit;
+  }
+}
