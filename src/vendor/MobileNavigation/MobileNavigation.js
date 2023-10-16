@@ -13,6 +13,10 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
         setIsMenuOpen(!isMenuOpen);
         console.log(isMenuOpen);
     }
+    const handleOpenSigninModalWithMenuClose = () => {
+        setIsMenuOpen(false);
+        handleOpenSigninModal()
+    }
     return (
         <div className={`mobile-nav  ${isMenuOpen && 'mobile-nav__bar_dark'}`}>
             <div className={`mobile-nav__bar`}>
@@ -30,17 +34,6 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
                         : ""
                     }`} onClick={handleMenuToggle}></button>
             </div>
-            {/* {inSavedNews ? (
-                <div className={`mobile-nav__bar`}>
-                    <h4 className={`mobile-nav__title ${!isMenuOpen ? 'mobile-nav__title_saved-news' : ''} `}>NewsExplorer</h4>
-                    <button className={`mobile-nav__toggle-button mobile-nav__toggle-button_saved-news ${isMenuOpen && 'mobile-nav__toggle-button_active'}`} onClick={handleMenuToggle}></button>
-                </div>
-            ) : (
-                <div className={`mobile-nav__bar`}>
-                    <h4 className={`mobile-nav__title`}>NewsExplorer</h4>
-                    <button className={`mobile-nav__toggle-button ${isMenuOpen && 'mobile-nav__toggle-button_active'}`} onClick={handleMenuToggle}></button>
-                </div>
-            )} */}
             {isMenuOpen && (
                 <div className='mobile-nav__menu'>
                     <div className='mobile-nav__buttons'>
@@ -51,8 +44,7 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
                             <button className='mobile-nav__button'>Saved Articles</button>
                         </Link>
                     </div>
-                    <button className={`mobile-nav__signin-button `}>Sgin in</button>
-                    {/* <button className='mobile-nav__logout-button'>Reza </button> */}
+                    <button className={`mobile-nav__signin-button `} onClick={handleOpenSigninModalWithMenuClose}>Sgin in</button>
                 </div>
             )}
         </div >

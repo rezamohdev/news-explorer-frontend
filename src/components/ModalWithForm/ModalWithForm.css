@@ -148,8 +148,31 @@
   font-weight: 400;
   line-height: normal;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 606px) {
+  .modal {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
   .modal__content {
-    /* margin-top: -340px; */
+    padding: 16px 17px !important;
+    width: 320px !important;
+    height: 560px;
+    margin-top: -280px;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  .modal__close {
+    right: 16px !important;
+    top: -50px !important;
+  }
+
+  .form__input {
+    width: 288px;
+  }
+  .form__link-container_signin {
+    top: 370px;
+  }
+  .form__link-container_signup {
+    top: 440px;
   }
 }

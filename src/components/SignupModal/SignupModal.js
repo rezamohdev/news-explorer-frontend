@@ -23,7 +23,7 @@ export default function SignupModal({ onRegisterUser, handleCloseModal, isOpen =
                 <input name='username' value={values.username || ''} placeholder='username' minLength={1} maxLength={30} className='form__input' />
             </fieldset>
             <span className='form__error'>This email is not available</span>
-            <Link to='/signin' className='form__link-container' onClick={handleOpenSigninModal}>Or <span className='form__main-link'>Sign in</span></Link>
+            <Link to='/signin' className='form__link-container form__link-container_signup' onClick={handleOpenSigninModal}>Or <span className='form__main-link'>Sign in</span></Link>
         </ModalWithForm>
     )
 }
