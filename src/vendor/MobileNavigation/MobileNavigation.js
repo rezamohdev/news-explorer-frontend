@@ -16,9 +16,8 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
     return (
         <div className={`mobile-nav  ${isMenuOpen && 'mobile-nav__bar_dark'}`}>
             <div className={`mobile-nav__bar`}>
-                <h4 className={`mobile-nav__title ${inSavedNews && 'mobile-nav__title_saved-news'}`}>NewsExplorer</h4>
-                {/* <button className={`mobile-nav__toggle-button ${isMenuOpen ? (inSavedNews ? 'mobile-nav__toggle-button_saved-news' : 'mobile-nav__toggle-button_active') : 'mobile-nav__toggle-button_active'} `} onClick={handleMenuToggle}></button> */}
-                <button className={`mobile-nav__toggle-button ${isMenuOpen ? (inSavedNews ? 'mobile-nav__toggle-button_saved-news' : 'mobile-nav__toggle-button_active') : 'mobile-nav__toggle-button_active'}`} onClick={handleMenuToggle}></button>
+                <h4 className={`${!isMenuOpen ? 'mobile-nav__title_saved-news' : 'mobile-nav__title'} ${inSavedNews ? 'mobile-nav__title' : 'mobile-nav__title'} `}>NewsExplorer</h4>
+                <button className={`mobile-nav__toggle-button ${isMenuOpen && 'mobile-nav__toggle-button_active'}`} onClick={handleMenuToggle}></button>
             </div>
             {isMenuOpen && (
                 <div className='mobile-nav__menu'>
