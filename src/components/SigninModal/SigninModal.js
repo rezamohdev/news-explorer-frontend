@@ -20,7 +20,7 @@ export default function SigninModal({ onRegisterUser, handleCloseModal, isOpen =
                 <label htmlFor='password' className='form__label'>Password</label>
                 <input name='password' type='password' value={values.password || ''} placeholder='password' minLength={1} maxLength={30} className='form__input' />
             </fieldset>
-            <Link to='/signup' className='form__link-container' onClick={handleOpenSignupModal}>Or <span className='form__main-link'>Sign up</span></Link>
+            <Link to='/signup' className='form__link-container form__link-container_signin' onClick={handleOpenSignupModal}>Or <span className='form__main-link'>Sign up</span></Link>
         </ModalWithForm>
     )
 }

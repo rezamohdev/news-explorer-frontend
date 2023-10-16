@@ -29,7 +29,7 @@
   border: none;
   cursor: pointer;
 }
-.modal__content {
+.modal__content_success {
   position: relative;
   padding: 34px 36px;
   border-radius: 16px;
@@ -53,4 +53,32 @@
 }
 .modal__main-link {
   text-decoration: none;
+}
+
+@media screen and (max-width: 606px) {
+  .modal {
+    justify-content: center;
+    align-items: center;
+  }
+  .modal__content_success {
+    padding: 36px !important;
+    width: 320px !important;
+    height: 360px;
+    margin-top: -280px;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+  .modal__close {
+    right: 16px !important;
+    top: -50px !important;
+  }
+  .modal__title {
+    width: 250px;
+    font-size: 16px;
+  }
+  .modal__main-link {
+    margin-left: 20px;
+  }
 }

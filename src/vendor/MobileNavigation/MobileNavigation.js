@@ -13,12 +13,26 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
         setIsMenuOpen(!isMenuOpen);
         console.log(isMenuOpen);
     }
+    const handleOpenSigninModalWithMenuClose = () => {
+        setIsMenuOpen(false);
+        handleOpenSigninModal()
+    }
     return (
         <div className={`mobile-nav  ${isMenuOpen && 'mobile-nav__bar_dark'}`}>
             <div className={`mobile-nav__bar`}>
-                <h4 className={`mobile-nav__title ${inSavedNews && 'mobile-nav__title_saved-news'}`}>NewsExplorer</h4>
-                {/* <button className={`mobile-nav__toggle-button ${isMenuOpen ? (inSavedNews ? 'mobile-nav__toggle-button_saved-news' : 'mobile-nav__toggle-button_active') : 'mobile-nav__toggle-button_active'} `} onClick={handleMenuToggle}></button> */}
-                <button className={`mobile-nav__toggle-button ${isMenuOpen ? (inSavedNews ? 'mobile-nav__toggle-button_saved-news' : 'mobile-nav__toggle-button_active') : 'mobile-nav__toggle-button_active'}`} onClick={handleMenuToggle}></button>
+                <h4 className={`mobile-nav__title ${isMenuOpen
+                    ? "mobile_nav__title_open_menu"
+                    : inSavedNews
+                        ? "mobile-nav__title_saved-news"
+                        : ""
+
+                    } `}>NewsExplorer</h4>
+                <button className={`mobile-nav__toggle-button ${isMenuOpen
+                    ? "mobile-nav__toggle-button_open_menu"
+                    : inSavedNews
+                        ? "mobile-nav__toggle-button_saved-news"
+                        : ""
+                    }`} onClick={handleMenuToggle}></button>
             </div>
             {isMenuOpen && (
                 <div className='mobile-nav__menu'>
@@ -26,12 +40,26 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
                         <Link to="/">
                             <button className='mobile-nav__button'>Home</button>
                         </Link>
-                        <Link to="/saved-news">
-                            <button className='mobile-nav__button'>Saved Articles</button>
-                        </Link>
+                        {
+                            isLoggedIn &&
+                            (
+                                <Link to="/saved-news">
+                                    <button className='mobile-nav__button'>Saved Articles</button>
+                                </Link>
+                            )
+                        }
+
                     </div>
-                    <button className={`mobile-nav__signin-button `}>Sgin in</button>
-                    {/* <button className='mobile-nav__logout-button'>Reza </button> */}
+                    {
+                        isLoggedIn ?
+                            (
+                                <button className='mobile-nav__logout-button'>Reza </button>
+                            ) :
+                            (
+                                <button className={`mobile-nav__signin-button `} onClick={handleOpenSigninModalWithMenuClose}>Sgin in</button>
+
+                            )
+                    }
                 </div>
             )}
         </div >
