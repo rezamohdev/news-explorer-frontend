@@ -14,7 +14,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [activeModal, setActiveModal] = useState("");
+    const [activeModal, setActiveModal] = useState("success");
 
 
 
