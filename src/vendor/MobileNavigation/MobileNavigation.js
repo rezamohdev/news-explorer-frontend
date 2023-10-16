@@ -40,11 +40,26 @@ export default function MobileNavigation({ inSavedNews, isLoggedIn, handleOpenSi
                         <Link to="/">
                             <button className='mobile-nav__button'>Home</button>
                         </Link>
-                        <Link to="/saved-news">
-                            <button className='mobile-nav__button'>Saved Articles</button>
-                        </Link>
+                        {
+                            isLoggedIn &&
+                            (
+                                <Link to="/saved-news">
+                                    <button className='mobile-nav__button'>Saved Articles</button>
+                                </Link>
+                            )
+                        }
+
                     </div>
-                    <button className={`mobile-nav__signin-button `} onClick={handleOpenSigninModalWithMenuClose}>Sgin in</button>
+                    {
+                        isLoggedIn ?
+                            (
+                                <button className='mobile-nav__logout-button'>Reza </button>
+                            ) :
+                            (
+                                <button className={`mobile-nav__signin-button `} onClick={handleOpenSigninModalWithMenuClose}>Sgin in</button>
+
+                            )
+                    }
                 </div>
             )}
         </div >
