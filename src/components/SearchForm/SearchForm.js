@@ -10,7 +10,7 @@ export default function SearchForm({ onSearchNews }) {
     }
     return (
         <form className='searchform'>
-            <input className='searchbar__input' placeholder='Search something ...' value={values.search || ""} name='seatch' />
+            <input className='searchbar__input' placeholder='Search something ...' value={values.search || ""} name='search' onChange={handleChange} />
             <button value='Search' name='search' title='Search' className='searchbar__button' type='submit' onSubmit={handleOnSubmit}>Search</button>
         </form>
     )
