@@ -1,11 +1,16 @@
 import React from 'react';
 import './SearchForm.css';
-
-export default function SearchForm() {
+import { useForm } from '../../hooks/useForm';
+export default function SearchForm({ onSearchNews }) {
+    const [values, handleChange, setValues] = useForm({});
+    const handleOnSubmit = (evt) => {
+        evt.preventDefault();
+        onSearchNews(values);
+    }
     return (
         <form className='searchform'>
-            <input className='searchbar__input' placeholder='Search something ...' value={''} />
-            <button value='Search' name='search' title='Search' className='searchbar__button' type='submit'>Search</button>
+            <input className='searchbar__input' placeholder='Search something ...' value={values.search || ""} name='seatch' />
+            <button value='Search' name='search' title='Search' className='searchbar__button' type='submit' onSubmit={onSearchNews}>Search</button>
         </form>
     )
 }
